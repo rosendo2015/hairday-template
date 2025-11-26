@@ -1,8 +1,9 @@
 import dayjs from 'dayjs';
 
 import {openingHours} from '../../utils/opening-hours.js';
+import { hoursClick } from './hours-click.js';
 
-const hours = document.querySelector('.hours');
+const hours = document.getElementById('hours');
 
 export function hoursLoad({date}) {
 const opening = openingHours.map((hour)=>{
@@ -24,7 +25,7 @@ opening.forEach(({hour, available})=>{
 
     li.textContent = hour;
 
-    if(hour === "9:00"){
+    if(hour === "8:00"){
         hourHeaderAdd('Manhã');
     }else if(hour === "13:00"){
         hourHeaderAdd('Tarde');

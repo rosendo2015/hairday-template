@@ -3,9 +3,11 @@ export function hoursClick(){
     console.log(hours)
     hours.forEach((available)=>{
         available.addEventListener("click",(selected)=>{
+            //remove a classe hour-selected de todas as li não selecionadas
             hours.forEach((hour)=>{
                 hour.classList.remove("hour-selected")
             })
+            //adiciona a classe as li selecionadas
             selected.target.classList.add("hour-selected")
         })
     })
