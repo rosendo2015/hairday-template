@@ -1,19 +1,19 @@
 import dayjs from "dayjs";
 
 //seleciona as sessões por periodo manha tarde e noite
-const periodMorning = document.getElementById("period-morning");
-const periodAfternoon = document.getElementById("period-afternoon");
-const periodNight = document.getElementById("period-night");
+let periodMorning = document.getElementById("period-morning");
+let periodAfternoon = document.getElementById("period-afternoon");
+let periodNight = document.getElementById("period-night");
 
 export function schedulesShow({ dailySchedules }) {
   try {
-    //Limpa as listas
-    periodMorning = "";
-    periodAfternoon = "";
-    periodNight = "";
+    //Limpa as sessões ul (listas de agendamento)
+    periodMorning.innerHTML = "";
+    periodAfternoon.innerHTML = "";
+    periodNight.innerHTML = "";
 
     //renderiza os agendamentos por periodo
-    dailySchedules.array.forEach((schedule) => {
+    dailySchedules.forEach((schedule) => {
       const item = document.createElement("li");
       const time = document.createElement("strong");
       const name = document.createElement("span");
@@ -47,7 +47,7 @@ export function schedulesShow({ dailySchedules }) {
       }
     });
   } catch (error) {
-    alert("Não foi possivel exibir os agendamentos.");
+    alert("***Não foi possivel exibir os agendamentos.***");
     console.log(error);
   }
 }
