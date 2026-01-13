@@ -23,7 +23,7 @@ form.onsubmit = async (event) => {
     //pegar o nome do cliente
     const name = clientName.value.trim();
     if (!name) {
-      return alert("informe onoe do cliente");
+      return alert("informe o nome do cliente");
     }
     //pega o horário selecionada
     const hourSelected = document.querySelector(".hour-selected")
@@ -37,7 +37,7 @@ form.onsubmit = async (event) => {
     const when = dayjs(selectedDate.value).add(hour, "hour")
 
    //gerar um ID
-   const id = new Date().getTime
+   const id = new Date().getTime()
 
    await scheduleNew({
     id, 
